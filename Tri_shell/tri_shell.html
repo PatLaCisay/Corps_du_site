@@ -1,10 +1,10 @@
 <html>
 	<head>
 	
-		<title>Tri_Selection</title>
+		<title>Tri_Shell</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" title="design" href="design_selection.css">
-		<script language="javascript" src="tri_selection.js" >
+		<link rel="stylesheet" type="text/css" title="design" href="design_shell.css">
+		<script language="javascript" src="tri_shell.js" >
 		</script>
 	</head>
 	<body onload="draw_Elements();" >
@@ -34,7 +34,7 @@
 		</div>
 		<div id="corps">
 			<fieldset class="Presentation">
-				<legend>Tri_Selection : l'algorithme </legend>
+				<legend>Tri_Shell : l'algorithme </legend>
 				<div>
 					<h3> Principe </h3>
 					On parcours le tableau de gauche à droite (avec un indice i ). A chaque étape, on échange l’élément situé
@@ -102,7 +102,7 @@
 					<H3> Code JavaScript </H3>	
 					<h4>
 <pre>
-function Tri_Selection(tableau)
+function Tri_Shell(tableau)
 {
   var i,j,min,indice_min;
   for (i = 0; i < tableau.length-1; i++)
@@ -159,7 +159,7 @@ permuter(tableau,i,j)
 			<fieldset class="Boite_Controle">
 				<legend> Boîte de Contrôle </legend>
 				<div>
-					<INPUT TYPE="Button" class="button" Value="Executer" onclick="Lance_tri_selection();">
+					<INPUT TYPE="Button" class="button" Value="Executer" onclick="Lance_tri_shell();">
 					<INPUT TYPE="Button" class="button" Value="Susppendre" onclick="stop();">
 					<INPUT TYPE="Button" class="button" Value="Continuer" onclick="continuer();">
 					<br>
