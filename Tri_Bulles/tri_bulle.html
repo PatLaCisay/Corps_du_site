@@ -84,14 +84,6 @@
 							<TD class="td">8</td>
 						</TR>
 						<TR>
-							<TD class="td">3</td>
-							<TD class="td">4</td>
-							<TD class="td">1</td>
-							<TD class="td">2</td>
-							<TD class="td">6</td>
-							<TD class="td"><font color="#99FF66">8</font></td>
-						</TR>
-						<TR>
 							<TD class="td"><font color="#99FF66">3</font></td>
 							<TD class="td">4</td>
 							<TD class="td">1</td>
@@ -124,22 +116,6 @@
 							<TD class="td">8</td>
 						</TR>
 						<TR>
-							<TD class="td">3</td>
-							<TD class="td">1</td>
-							<TD class="td">2</td>
-							<TD class="td">4</td>
-							<TD class="td"><font color="#99FF66">6</font></td>
-							<TD class="td">8</td>
-						</TR>
-						<TR>
-							<TD class="td">3</td>
-							<TD class="td">1</td>
-							<TD class="td">2</td>
-							<TD class="td">4</td>
-							<TD class="td">6</td>
-							<TD class="td"><font color="#99FF66">8</font></td>
-						</TR>
-						<TR>
 							<TD class="td"><font color="#99FF66">3</font></td>
 							<TD class="td">1</td>
 							<TD class="td">2</td>
@@ -160,62 +136,6 @@
 							<TD class="td">2</td>
 							<TD class="td"><font color="#99FF66">3</font></td>
 							<TD class="td">4</td>
-							<TD class="td">6</td>
-							<TD class="td">8</td>
-						</TR>
-						<TR>
-							<TD class="td">1</td>
-							<TD class="td">2</td>
-							<TD class="td">3</td>
-							<TD class="td"><font color="#99FF66">4</font></td>
-							<TD class="td">6</td>
-							<TD class="td">8</td>
-						</TR>
-						<TR>
-							<TD class="td">1</td>
-							<TD class="td">2</td>
-							<TD class="td">3</td>
-							<TD class="td">4</td>
-							<TD class="td"><font color="#99FF66">6</font></td>
-							<TD class="td">8</td>
-						</TR>
-						<TR>
-							<TD class="td">1</td>
-							<TD class="td">2</td>
-							<TD class="td">3</td>
-							<TD class="td">4</td>
-							<TD class="td">6</td>
-							<TD class="td"><font color="#99FF66">8</font></td>
-						</TR>
-						<TR>
-							<TD class="td"><font color="#99FF66">1</font></td>
-							<TD class="td">2</td>
-							<TD class="td">3</td>
-							<TD class="td">4</td>
-							<TD class="td">6</td>
-							<TD class="td">8</td>
-						</TR>
-						<TR>
-							<TD class="td">1</td>
-							<TD class="td"><font color="#99FF66">2</font></td>
-							<TD class="td">3</td>
-							<TD class="td">4</td>
-							<TD class="td">6</td>
-							<TD class="td">8</td>
-						</TR>
-						<TR>
-							<TD class="td">1</td>
-							<TD class="td">2</td>
-							<TD class="td"><font color="#99FF66">3</font></td>
-							<TD class="td">4</td>
-							<TD class="td">6</td>
-							<TD class="td">8</td>
-						</TR>
-						<TR>
-							<TD class="td">1</td>
-							<TD class="td">2</td>
-							<TD class="td">3</td>
-							<TD class="td"><font color="#99FF66">4</font></td>
 							<TD class="td">6</td>
 							<TD class="td">8</td>
 						</TR>
@@ -244,9 +164,9 @@ function Tri_Bulle(tableau)
  var i,j;
  for (i=0; i < tableau.length; i++)
  {
-  for(j=i+1;j < tableau.length; j++)
+  for(j=0; j < tableau.length; j++)
   {
-   if(tableau[j]>tableau[i])
+   if(tableau[j] < tableau[i])
    {
     permuter(tableau,j,i);
    }
@@ -289,6 +209,11 @@ permuter(tableau,i,j)
 				<legend>Zone d'Animation</legend>
 				<div>
 					<canvas id="canvas" width="450" height="300" style='border:0px solid black;'></canvas>
+				</div>
+				<div>
+					<p>
+						<strong>Note :</strong> l'algorithme a été inversé pour mieux représenter les bulles qui remontent à la surface !
+					</p>
 				</div>
 				
 			</fieldset>
