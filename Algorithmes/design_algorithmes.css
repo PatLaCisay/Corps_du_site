@@ -1,0 +1,196 @@
+			/*
+			Réalisé par Mlle CHARI Maha, 
+			Mr ZAMMOURI Amin
+			*/
+			body
+			{
+				width:860px;
+				margin:auto;
+				margin-top:20px;
+				margin-bottom:20px;	
+				background-image:url("fond2.png");
+			}
+			ul {
+				color :rgba(80,150,240,1);
+			}
+
+			/* L'en-tête */
+
+			#en_tete
+			{
+				width:860px;
+				height:100px;
+				background-image:url("banniere.gif");
+				background-repeat:no-repeat;
+				margin-bottom:10px;
+			}
+
+			/* Le menu */
+
+			#menu
+			{
+				float:left;
+				width:150px;
+				
+			}
+
+			.element_menu
+			{
+				background-color:#FFFFFF;
+				background-image:url("motif.png");
+				background-repeat:repeat-x;
+				height:150px;
+				border:1px solid black;
+				border-style:dashed;
+				margin-bottom:20px;
+				
+			}
+
+
+			/* Quelques effets sur les menus */
+
+			.element_menu a
+			{
+				color:#B3B3B3;
+			}
+
+			.element_menu a:hover
+			{
+				background-color:rgba(80,150,240,0.6);;
+				color:black;
+			}
+
+
+			/* Le corps de la page */
+
+			#corps
+			{
+				margin-left:170px;
+				margin-bottom:20px;
+				padding:5px;
+				width:675;
+				color:#B3B3B3;
+				background-color:#FFFFFF;
+				background-repeat:repeat-x;
+				
+				border:1px solid black;
+				border-style:dashed;
+			}
+			 
+			 h3 {
+				color:rgba(80,150,240,0.9);
+				text-indent:0.1cm;
+				text-decoration: underline ;
+			}
+			h4 {
+				font-family:"courier new";
+				color:blue;
+				background-color:rgba(80,150,240,0.1);
+			}
+			.menu_navigation
+			{
+				width:100px;
+				height:120;
+				margin-left:10px;
+				margin-bottom:10px;
+				font-family:"comic sans ms";
+				font-size:12px;
+				color:rgba(80,150,240,0.9);
+				border:1px solid black;
+				border-style:dashed;
+			}
+			input {
+				padding:0.15em;
+				border:1px solid #ddd;
+				background:#fafafa;
+				font:bold 0.95em arial, sans-serif;
+				-moz-border-radius:0.4em;
+				-khtml-border-radius:0.4em;
+			}
+			input[type=text]:hover, input[type=text]:focus {
+				border-color:#c5c5c5;
+				background:#f6f6f6;
+			}
+			.button {
+				margin-left:1em;
+				width:75px;
+				height:18px;
+				border:0;
+				background:#4682b4;
+				display:inline-block;
+				cursor:pointer !important; cursor:hand;
+				color:#fff;
+			}
+			.Liste_Tri {
+				margin-left:1em;
+				width:110px;
+				height:26px;
+				border:0;
+				background:#4682b4;
+				display:inline-block;
+				cursor:pointer !important; cursor:hand;
+				color:#fff;
+			}
+			.Contenu_pp {
+				margin-left:5px;
+				margin-bottom:2px;
+				font-family:"comic sans ms";
+				font-size:12px;
+				font-weight: bold;
+				color:rgba(80,150,240,0.9);
+				border:1px solid black;
+				border-style:dashed;
+			}
+			#pied_de_page
+			{
+				padding:5px;
+
+				text-align:center;
+
+				color:#B3B3B3;
+				background-color:#FFFFFF;
+				border:1px solid black;
+				border-style:dashed;
+				width: 675;
+				margin-left:170px;
+			}
+			.sr{
+				align:center;
+				border:1px solid #ddd;
+				background:#fff;
+				padding:1px;
+				margin:1em 0;
+
+			}
+			.td {
+				color:rgba(73,73,73,0.7);
+				width:40px;
+				font-family: "courrier new";
+				font-size: 12px;
+				font-weight:bold;
+				text-align:center;
+				
+			}
+			.tab_button {
+				margin-left:5px;
+				width:100px;
+				height:20px;
+				font-family:"times new romen";
+				border:0;
+				background:#4682b4;
+				display:inline-block;
+				cursor:pointer !important; cursor:hand;
+				color:#fff;
+			}
+			.Presentation {
+				width:640px;
+				height:300;
+				margin-left:10px;
+				margin-bottom:10px;
+				font-family:"comic sans ms";
+				text-align: justify;
+				font-size:13px;
+				color:rgba(73,73,73,0.7);
+				border:1px solid black;
+				border-style:dashed;
+			}

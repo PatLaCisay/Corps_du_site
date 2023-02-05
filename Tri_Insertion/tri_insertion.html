@@ -1,0 +1,248 @@
+<html>
+	<head>
+	
+		<title>Tri_Insertion</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" title="design" href="design_insertion.css">
+		<script language="javascript" src="tri_insertion.js">
+
+	</script>
+	</head>
+	<body onload="draw_Elements();" >
+		<div id="en_tete">
+			
+		</div>
+
+		<div id="menu">		
+			<div class="element_menu">
+			<fieldset class="menu_navigation" >
+				<legend> Menu de navigation </legend>
+				<table>
+				<tr>
+				<td><a href="../accueil/accueil.html"> <input type="button" class="tab_button" value="Acceuil" > </a><td>
+				</tr>
+				<tr>
+				<td> <a href="../algorithmes/algorithmes.html"><input type="button" class="tab_button" value="Algorithmes" > </a> <td>
+				</tr>
+				
+				<tr>
+				
+				</tr>
+				</table>
+			</fieldset>	
+				
+			</div>
+		</div>
+		<div id="corps">
+			<fieldset class="Presentation">
+				<legend>Tri_Bulles : l'algorithme </legend>
+				<div>
+					<h3> Principe </h3>
+					Le tri par insertion consiste à parcourir le tableau de gauche à droite, en maintenant le sous-tableau
+					situé à gauche de i trié. On cherche ensuite à insérer le i<sup>éme </sup> élément dans ce sous-tableau, en le faisant
+					 (( descendre ))vers la gauche dans le sous-tableau trié.
+					<h3> Exemple </h3>
+					les éléments comparés sont indiqués en couleur rouge, et l'élément(i) à inserer en vert.
+					<table class="sr">
+						<TR>
+							<TD class="td">4</td>
+							<TD class="td"><font color="#99FF66">3</font></td>
+							<TD class="td">6</td>
+							<TD class="td">1</td>
+							<TD class="td">2</td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td"><font color="red">3</font></td>
+							<TD class="td"><font color="red">4</font></td>
+							<TD class="td">6</td>
+							<TD class="td">1</td>
+							<TD class="td">2</td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td">3</td>
+							<TD class="td">4</td>
+							<TD class="td"><font color="#99FF66">6</font></td>
+							<TD class="td">1</td>
+							<TD class="td">2</td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td">3</td>
+							<TD class="td"><font color="red">4</font></td>
+							<TD class="td"><font color="red">6</font></td>
+							<TD class="td">1</td>
+							<TD class="td">2</td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td">3</td>
+							<TD class="td">4</td>
+							<TD class="td">6</td>
+							<TD class="td"><font color="#99FF66">1</font></td>
+							<TD class="td">2</td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td">3</td>
+							<TD class="td">4</td>
+							<TD class="td"><font color="red">1</font></td>
+							<TD class="td"><font color="red">6</font></td>
+							<TD class="td">2</td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td">3</td>
+							<TD class="td"><font color="red">1</font></td>
+							<TD class="td"><font color="red">4</font></td>
+							<TD class="td">6</td>
+							<TD class="td">2</td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td"><font color="red">1</font></td>
+							<TD class="td"><font color="red">3</font></td>
+							<TD class="td">4</td>
+							<TD class="td">6</td>
+							<TD class="td">2</td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td">1</td>
+							<TD class="td">3</td>
+							<TD class="td">4</td>
+							<TD class="td">6</td>
+							<TD class="td"><font color="#99FF66">2</font></td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td">1</td>
+							<TD class="td">3</td>
+							<TD class="td">4</td>
+							<TD class="td"><font color="red">2</font></td>
+							<TD class="td"><font color="red">6</font></td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td">1</td>
+							<TD class="td">3</td>
+							<TD class="td"><font color="red">2</font></td>
+							<TD class="td"><font color="red">4</font></td>
+							<TD class="td">6</font></td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td">1</td>
+							<TD class="td"><font color="red">2</font></td>
+							<TD class="td"><font color="red">3</font></td>
+							<TD class="td">4</td>
+							<TD class="td">6</font></td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td"><font color="red">1</font></td>
+							<TD class="td"><font color="red">2</font></td>
+							<TD class="td">3</td>
+							<TD class="td">4</td>
+							<TD class="td">6</font></td>
+							<TD class="td">8</td>
+						</TR>
+						<TR>
+							<TD class="td">1</td>
+							<TD class="td">2</td>
+							<TD class="td">3</td>
+							<TD class="td">4</td>
+							<TD class="td">6</td>
+							<TD class="td"><font color="#99FF66">8</font></td>
+						</TR>
+						<TR>
+							<TD class="td">1</td>
+							<TD class="td">2</td>
+							<TD class="td">3</td>
+							<TD class="td">4</td>
+							<TD class="td"><font color="red">6</font></td>
+							<TD class="td"><font color="red">8</font></td>
+						</TR>
+					</TABLE>
+					<H3> Code JavaScript </H3>	
+					<h4>
+<pre>
+function Tri_Insertion(tableau)
+{
+ var i,j;
+ for (i=1; i < tableau.length; i++)
+ {
+  for(j=i;j>0;j--)
+  {
+   if(tableau[j-1]>tableau[j])
+   {
+    permuter(tableau,j-1,j);
+   }
+  }
+ }
+}
+</pre>
+					</h4>
+					On remarque que nous avons appelé une fonction <font color="blue" > permuter </font>
+					, il s'agit tout simlement d'une fonction qui échange deux éléments d'un tableau:
+					<p>
+					<h4>
+<pre>
+permuter(tableau,i,j)
+{
+  var a;
+  a=tableau[i];
+  tableau[i]=tableau[j];
+  tableau[j]=a;
+}
+</pre>
+		</h4>			
+					<H3> Complexité </h3>
+					Ici, dans le bon cas où l’on a un tableau déjà trié, ces algorithmes vont effectuer n−1 comparaisons, et
+					pas de permutation.
+					<p>
+					La complexité dans le meilleur des cas est donc linéaire.<p>
+					Par contre dans le cas d’un tableau trié à l’envers, le nombre de comparaisons et de permutations va être,
+					comme dans les cas précédents, proportionnel à n<sup>2</sup>.<p>
+					La complexité dans le pire des cas est donc quadratique.<P>
+					On peut montrer que la complexité moyenne est également quadratique.
+					En pratique, cet algorithme est le plus rapide des trois algorithmes de bases que nous avons vus-il est
+					notamment possible de coder un peu plus intelligemment le décalage vers la gauche pour supprimer des accés
+					au tableau.
+								
+				</div>
+				
+			</fieldset>
+			<fieldset class="Zone_Animation" >
+				<legend>Zone d'Animation</legend>
+				<div>
+					<canvas id="canvas" width="450" height="300" style='border:0px solid black;'></canvas>
+				</div>
+				
+			</fieldset>
+			<fieldset class="Boite_Controle">
+				<legend> Boîte de Contrôle </legend>
+				<div>
+					<INPUT TYPE="Button" class="button" Value="Executer" onclick="Executer()();">
+					<INPUT TYPE="Button" class="button" Value="Susppendre" onclick="stop();">
+					<INPUT TYPE="Button" class="button" Value="Continuer" onclick="continuer();">
+					<br>
+					<center>
+					<strong> 
+					/!\ L'animation prendra qellques secondes avant de se lancer /!\
+					</strong>
+					</center>
+				</div>
+			</fieldset>	
+		</div>
+
+		<div id="pied_de_page">
+			<fieldset class="Contenu_pp" >
+				<div>
+					Par: Mr ZAMMOURI Amin
+				</div>
+			</fieldset>
+		</div>	   	
+	</body></html>
+		

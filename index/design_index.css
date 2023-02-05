@@ -1,0 +1,62 @@
+			/*
+			Réalisé par Mlle CHARI Maha, 
+			Mr ZAMMOURI Amin
+			*/
+			body
+			{
+				width:860px;
+				margin:auto;
+				margin-top:20px;
+				margin-bottom:20px;	
+				background-image:url("fond2.png");
+			}
+
+			
+			/* Le corps de la page */
+
+			#corps
+			{
+				margin-left:70px;
+				margin-bottom:20px;
+				padding:5px;
+				width:700;
+				color:#B3B3B3;
+				background-color:#FFFFFF;
+				background-repeat:repeat-x;
+				
+				border:1px solid black;
+				border-style:dashed;
+			}
+			 
+			 h1 
+			      {
+				color:black;
+				text-indent:0.1cm;
+				text-decoration: underline ;
+				font-family:"courier new";
+				font-weight:bolder;
+				
+			}
+			h5{
+				font-family:"courier new";
+				color:black;
+				font-size:12px;
+			}
+			#entree {
+				margin-left:10px;
+				margin-bottom:10px;
+				font-family:"comic sans ms";
+				text-align: center;
+				font-weight: bold;
+				font-size:13px;
+				color:green;
+			}
+			.inf {
+				margin-left:10px;
+				margin-bottom:10px;
+				font-family:"comic sans ms";
+				text-align: center;
+				font-weight: bold;
+				font-size:13px;
+				color:black;
+			}
