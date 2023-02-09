@@ -103,7 +103,7 @@
 						break;
 					}				
 				}
-				if(j==tab.length)
+				if(j==tab.length-1)
 				{
 					i++;
 				}
