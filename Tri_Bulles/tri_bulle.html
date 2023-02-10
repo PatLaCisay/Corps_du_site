@@ -159,19 +159,14 @@
 					<H3> Code JavaScript </H3>	
 					<h4>
 <pre>
-function Tri_Bulle(tableau)
-{
- var i,j;
- for (i=0; i < tableau.length; i++)
- {
-  for(j=0; j < tableau.length; j++)
-  {
-   if(tableau[j] < tableau[i])
-   {
-    permuter(tableau,j,i);
-   }
-  }
- }
+function tri_bulle(tab) {
+	for (var i = 0; i < tab.length; i ++) {
+		for (var j = 0; j < n - i; j ++) {
+			if (tab[j] > tab[j + 1]) {
+				permuter(tab, i, j);
+			}
+		}
+	}
 }
 </pre>
 					</h4>
@@ -223,6 +218,8 @@ permuter(tableau,i,j)
 					<INPUT TYPE="Button" class="button" Value="Executer" onclick="Executer();">
 					<INPUT TYPE="Button" class="button" Value="Suspendre" onclick="stop();">
 					<INPUT TYPE="Button" class="button" Value="Continuer" onclick="continuer();">
+					<INPUT TYPE="Button" class="button" Value="Recharger" onclick="recharger();">
+
 					<br>
 					<center>
 					<strong> 

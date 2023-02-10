@@ -38,19 +38,19 @@
 					ctx.clearRect(0,Barre.y,canvas.width,Barre.dy+5); // clean the canvas
 					ctx.fillStyle = 'rgba(80,150,240,0.6)';
 					ctx.fillRect(j,Barre.y,Barre.dx,Barre.dy);
-					ctx.fillStyle = "blue";
+					ctx.fillStyle = "red";
 					ctx.fillText(Barre.dx,j+Barre.dx,Barre.y+10);
 					j=j+4;
 				}
 			}
-			setInterval(cycle, 45); 	// lance le cycle chaque 45 millisecondes	
+			setInterval(cycle, 40); 	// lance le cycle chaque 45 millisecondes	
 	}
-	function per(table,i,j)
+	function per(tab,i,j)
 	{
 		var a;
-		a=table[i].dx;
-		table[i].dx=table[j].dx;
-		table[j].dx=a;
+		a=tab[i].dx;
+		tab[i].dx=tab[j].dx;
+		tab[j].dx=a;
 	}
 	function Dessin(Barre)
 	{
@@ -78,43 +78,47 @@
 	}
 	function continuer()
 	{
-	  rep=setInterval(cycle,9000);
+		rep=setInterval(cycle,9000);
 	}
 	function cycle()
+	{
+		
+		if(i<tab.length)
 		{
-			
-			if(i<tab.length)
+			for(j=0;j<tab.length-1;j++)
 			{
-				for(j=i;j<tab.length;j++)
+				if(tab[j].dx<tab[j+1].dx)
 				{
-					if(tab[j].dx<tab[j+1].dx)
-					{
-						
-						Deplace_Horizontal(tab[j+1]);
-						Deplace_Horizontal(tab[j]);
-						 
-						var f3=function()
-						{
-							per(tab,j+1,j);
-							Dessin(tab[j+1]);
-							Dessin(tab[j]);	
-						}
-						setTimeout(f3,4000);
-						break;
-					}				
+					var f3=function(tab,j){
+						per(tab,j,j+1);
+						Dessin(tab[j])
+						Dessin(tab[j+1]);
+					}
+					setTimeout(f3(tab,j), 50);
+				}else{
+					setTimeout(
+						function(){
+
+						},
+						50
+					)						
 				}
-				if(j==tab.length-1)
-				{
-					i++;
-				}
-			}	
-		}
-	function Tri_Insertion(tab)
+
+			}
+		}	
+		i++;
+	}
+	function Tri_Bulle(tab)
 	{
 		i=0;
 		rep=setInterval(cycle,6500);
 	}
 	function Executer()
 	{
-		Tri_Insertion(tab);
+		Tri_Bulle(tab);
+	}
+
+	function recharger()
+	{
+		location.reload();
 	}

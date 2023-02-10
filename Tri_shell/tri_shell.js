@@ -8,12 +8,12 @@ var d=0;
 		this.dx = dx;
 		this.dy = 15;
 	}
-	for( i=0;i<tab.length;i++) // Crééation des éléments du tableaux
+	for( i=0;i<tab.length;i++) // CrÃ©ation des Ã©lÃ©ments du tableaux
 		{
 			tab[i]=new Barre(d+20,Math.round(100*Math.random()+1));
 			d=d+20;
 		}
-	function draw_Elements() // Fonction du dessin des élément du tableau sur le navigateur 
+	function draw_Elements() // Fonction du dessin des Ã©lÃ©ment du tableau sur le navigateur 
 	{	
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext('2d');
@@ -70,40 +70,39 @@ var d=0;
 			}
 			setInterval(cycle, 60); 
 	}
-	function Cycle_Selection()
+	function Cycle_Shell()
 	{
-		if(i<tab.length-1)
-			{	
-				min = tab[i].dx;
-				indice_min=i;
-				for(j=i+1;j<tab.length;j++)
+		if(i<tab.length-1){	
+			min = tab[i].dx;
+			indice_min=i;
+			for(j=i+1;j<tab.length;j++)
+			{
+				if(tab[j].dx<min)
 				{
-					if(tab[j].dx<min)
-					{
-						min=tab[j].dx;
-						indice_min=j;
-					}	
-				}
-				Deplace_Horizontal(tab[i]);
-				Deplace_Horizontal(tab[indice_min]);
-				var to=function()
-				{
-					per(tab,i,indice_min);
-				}
-				setTimeout(to,4000);
-				var to2=function()
-				{
-					Dessin(tab[i]);
-					Dessin(tab[indice_min]);
-					i++;
-				}
-				setTimeout(to2,4900);	
+					min=tab[j].dx;
+					indice_min=j;
+				}	
 			}
+			Deplace_Horizontal(tab[i]);
+			Deplace_Horizontal(tab[indice_min]);
+			var to=function()
+			{
+				per(tab,i,indice_min);
+			}
+			setTimeout(to,4000);
+			var to2=function()
+			{
+				Dessin(tab[i]);
+				Dessin(tab[indice_min]);
+				i++;
+			}
+			setTimeout(to2,4900);	
+		}
 	}
-	function Tri_Selection(tab)
+	function Tri_Shell(tab)
 	{
 		i=0; 
-		rep1=setInterval(Cycle_Selection,9000);		
+		rep1=setInterval(Cycle_Shell,9000);		
 	}
 	function alert_stop()
 	{
@@ -132,9 +131,49 @@ var d=0;
 	}
 	function continuer()
 	{
-		rep1= setInterval(Cycle_Selection,14000);
+		rep1= setInterval(Cycle_Shell,14000);
 	}
-	function Lance_tri_selection()
+	function Lance_tri_shell()
 	{
-		Tri_Selection(tab);
+		Tri_Shell(tab);
+	}
+
+	////////////
+
+	var gaps;
+
+	function tri_insertion(tableau, gap, debut) {
+	  var en_cours, j;
+	
+	  for (var i = gap + debut, a = tableau.length; i < a; i += gap) {
+		en_cours = tableau[i];
+		j = i;
+	
+		while (j > 0 && tableau[j - gap] > en_cours) {
+		  tableau[j] = tableau[j - gap];
+		  j = j - gap;
+		}
+	
+		tableau[j] = en_cours;
+	  }
+	}
+	
+	function tri_shell(tableau) {
+		gaps=[6, 4, 3, 2, 1];
+		for (i=0; i<gaps.length; i++) {
+			var gap = gaps[i];
+
+			for (var debut = 0, d = gap; debut < d; debut += 1) {
+				tri_insertion(tableau, gap, debut);
+			}
+		}
+
+		return tableau;
+	}
+	
+	gaps = [701, 301, 132, 57, 23, 10, 4, 1];
+	console.log(tri_shell(gaps));
+	function recharger()
+	{
+		location.reload();
 	}
