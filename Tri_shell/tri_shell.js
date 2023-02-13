@@ -34,17 +34,17 @@ function Deplace_Horizontal(Barre)
 	var j = Barre.x; // variable fonction du temps
 		var cycle = function() 
 		{
-			if(j<Barre.x+180)
+			if(j<Barre.x+160)
 			{
 				ctx.clearRect(0,Barre.y,canvas.width,Barre.dy+5); // clean the canvas
-				ctx.fillStyle = 'rgba(234,140,0,0.6)';
+				ctx.fillStyle = 'rgba(80,150,240,0.6)';
 				ctx.fillRect(j,Barre.y,Barre.dx,Barre.dy);
 				ctx.fillStyle = "blue";
 				ctx.fillText(Barre.dx,j+Barre.dx,Barre.y+10);
-				j=j+3;
+				j=j+4;
 			}
 		}
-		setInterval(cycle, 30); 	// lance le cycle chaque 30 millisecondes	
+		setInterval(cycle, 4); 	// lance le cycle chaque 45 millisecondes	
 }
 
 function per(table,i,j)
@@ -59,20 +59,21 @@ function Dessin(Barre)
 {
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
+	Barre.x=20;
 	var j = Barre.x; // variable fonction du temps
-		var cycle = function() 
+	var cycle = function() 
+	{
+		if(j<Barre.x+Barre.dx)
 		{
-			if(j<Barre.x+Barre.dx)
-			{
-				ctx.clearRect(j,Barre.y,canvas.width,Barre.dy);
-				ctx.fillStyle = '#99FF66';
-				ctx.fillRect(j,Barre.y,2,Barre.dy);
-				ctx.fillStyle = "blue";
-				ctx.fillText(Barre.dx,j+2,Barre.y+10);
-				j=j+2;
-			}
+			ctx.clearRect(j,Barre.y,canvas.width,Barre.dy);
+			ctx.fillStyle = '#99FF66';
+			ctx.fillRect(j,Barre.y,2,Barre.dy);
+			ctx.fillStyle = "blue";
+			ctx.fillText(Barre.dx,j+2,Barre.y+10);
+			j=j+2;
 		}
-		setInterval(cycle, 60); 
+	}
+	setInterval(cycle, 6); 
 }
 
 function tri_insertion(tableau, gap, debut) {
