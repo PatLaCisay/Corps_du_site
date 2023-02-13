@@ -82,7 +82,6 @@
 	}
 	function cycle()
 	{
-		console.log(i)
 		if(i<tab.length)
 		{
 			for(j=0;j<tab.length-1;j++)

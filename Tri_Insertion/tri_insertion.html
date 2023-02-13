@@ -3,7 +3,7 @@
 	
 		<title>Tri_Insertion</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link rel="stylesheet" type="text/css" title="design" href="..\ressources\design_algo.css">
+		<link rel="stylesheet" type="text/css" title="design" href="..\ressources\styles.css">
 		<script language="javascript" src="tri_insertion.js">
 
 	</script>
@@ -38,11 +38,14 @@
 				<legend>Tri_Insertion : l'algorithme </legend>
 				<div>
 					<h3> Principe </h3>
-					Le tri par insertion consiste à parcourir le tableau de gauche à droite, en maintenant le sous-tableau
+					<p>Le tri par insertion consiste à parcourir le tableau de gauche à droite, en maintenant le sous-tableau
 					situé à gauche de i trié. On cherche ensuite à insérer le i<sup>éme </sup> élément dans ce sous-tableau, en le faisant
 					 (( descendre ))vers la gauche dans le sous-tableau trié.
+					</p>
 					<h3> Exemple </h3>
-					les éléments comparés sont indiqués en couleur rouge, et l'élément(i) à inserer en vert.
+					<p>
+					Les éléments comparés sont indiqués en couleur rouge, et l'élément(i) à inserer en vert.
+					</p>
 					<table class="sr">
 						<TR>
 							<TD class="td">4</td>
@@ -184,9 +187,10 @@ function Tri_Insertion(tableau)
 }
 </pre>
 					</h4>
+					<p>
 					On remarque que nous avons appelé une fonction <font color="blue" > permuter </font>
 					, il s'agit tout simlement d'une fonction qui échange deux éléments d'un tableau:
-					<p>
+					</p>
 					<h4>
 <pre>
 permuter(tableau,i,j)
@@ -199,17 +203,20 @@ permuter(tableau,i,j)
 </pre>
 		</h4>			
 					<H3> Complexité </h3>
+					<p>
 					Ici, dans le bon cas où l’on a un tableau déjà trié, ces algorithmes vont effectuer n−1 comparaisons, et
 					pas de permutation.
+					</p>
+					<p>La complexité dans le meilleur des cas est donc linéaire.</p>
 					<p>
-					La complexité dans le meilleur des cas est donc linéaire.<p>
 					Par contre dans le cas d’un tableau trié à l’envers, le nombre de comparaisons et de permutations va être,
-					comme dans les cas précédents, proportionnel à n<sup>2</sup>.<p>
-					La complexité dans le pire des cas est donc quadratique.<P>
+					comme dans les cas précédents, proportionnel à n<sup>2</sup>.
+					La complexité dans le pire des cas est donc quadratique.
 					On peut montrer que la complexité moyenne est également quadratique.
 					En pratique, cet algorithme est le plus rapide des trois algorithmes de bases que nous avons vus-il est
 					notamment possible de coder un peu plus intelligemment le décalage vers la gauche pour supprimer des accés
 					au tableau.
+					</p>
 								
 				</div>
 				
