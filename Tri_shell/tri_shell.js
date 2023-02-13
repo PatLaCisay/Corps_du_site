@@ -191,8 +191,6 @@ function tri_insertion(tableau, gap, debut) {
 	for (var i = gap + debut; i < tableau.length; i += gap) {
 		en_cours = tableau[i];
 		j = i;
-		//console.log("i="+i)
-		//console.log("j="+j+" ; gap="+gap)
 		while (j > 0 && tableau[j - gap] > en_cours) {
 			tableau[j] = tableau[j - gap];
 			j -= gap;
