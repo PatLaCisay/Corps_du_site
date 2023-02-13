@@ -111,43 +111,41 @@
 					</TABLE>
 					<H3> Code JavaScript </H3>	
 					<h4>
-<pre>
-	function tri_shell(tableau) {
-		gaps=[6, 4, 3, 2, 1];
-		for (i=0; i<gaps.length; i++) {
-			var gap = gaps[i];
-
-			for (var debut = 0, d = gap; debut < d; debut += 1) {
-				tri_insertion(tableau, gap, debut);
+		<pre>
+			function tri_shell(tableau) {
+				gaps=[6, 4, 3, 2, 1];
+				for (i=0; i<gaps.length; i++) {
+					var gap = gaps[i];
+			
+					for (var debut = 0; debut < gap; debut ++) {
+						tri_insertion(tableau, gap, debut);
+					}
+				}
+			
+				return tableau;
 			}
-		}
+		</pre>
+		</h4>
+			On remarque que nous avons appelé une fonction <font color="blue" > tri_insertion </font>
+			, il s'agit tout simlement de la fonction de tri par insertion
+		<h4>
+		<pre>
+		function tri_insertion(tableau, gap, debut) {
+			var en_cours, j;
 
-		return tableau;
-	}
-</pre>
-					</h4>
-					On remarque que nous avons appelé une fonction <font color="blue" > tri_insertion </font>
-					, il s'agit tout simlement de la fonction de tri par insertion
-					<p>
-					<h4>
-<pre>
-	function tri_insertion(tableau, gap, debut) {
-		var en_cours, j;
-	  
-		for (var i = gap + debut, a = tableau.length; i < a; i += gap) {
-		  en_cours = tableau[i];
-		  j = i;
-	  
-		  while (j > 0 && tableau[j - gap] > en_cours) {
-			tableau[j] = tableau[j - gap];
-			j = j - gap;
-		  }
-	  
-		  tableau[j] = en_cours;
-		}
-	  }
-</pre>
-</h4>
+			for (var i = gap + debut; i < tableau.length; i += gap) {
+			en_cours = tableau[i];
+			j = i;
+		
+			while (j > 0 && tableau[j - gap] > en_cours) {
+				tableau[j] = tableau[j - gap];
+				j -= gap;
+			}
+		
+			tableau[j] = en_cours;
+			}
+		</pre>
+		</h4>
 					<H3> Complexité </h3>
 					Le nombre de permutations est tableau.length − 1 (une à chaque étape).<p>
 					A chaque étape, trouver le minimum requiert t.length − 1 − i comparaisons.<p>
@@ -188,9 +186,10 @@
 		<div id="pied_de_page">
 			<fieldset class="Contenu_pp" >
 				<div>
-					Par: Mr ZAMMOURI Amin
+					Par: Mrs ZAMMOURI Amin et BARREAU Lucas 
 				</div>
 			</fieldset>
 		</div>	   	
-	</body></html>
+	</body>
+</html>
 		

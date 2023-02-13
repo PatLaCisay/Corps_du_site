@@ -1,4 +1,4 @@
-function Tri_insertion(tableau, gap, debut)
+/*function Tri_insertion(tableau, gap, debut)
 {
   var i,j,min,indice_min;
   for (i = gap+debut; i < tableau.length-1; i+gap)
@@ -33,16 +33,13 @@ console.log(tri_shell(tab))
 
 //bubulles
 function tri_bulle(tab) {
-    var n;
-    n = tab.length;
-  
-    for (var i = 0; i < n; i ++) {
-      for (var j = 0; j < n - i; j ++) {
-        if (tab[j] > tab[j + 1]) {
-          [tab[j], tab[j + 1]] = [tab[j + 1], tab[j]];
-        }
+  for (var i = 0; i < tab.length; i ++) {
+    for (var j = 0; j < n - i; j ++) {
+      if (tab[j] > tab[j + 1]) {
+        permuter(tab, i, j);
       }
     }
   }
-  tab = [701, 301, 132, 57, 23, 10, 4, 1]
-  console.log(tri_shell(tab))
+}
+tab = [701, 301, 132, 57, 23, 10, 4, 1]
+console.log(tri_shell(tab))*/
