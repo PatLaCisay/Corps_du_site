@@ -82,7 +82,7 @@
 	}
 	function cycle()
 	{
-		
+		console.log(i)
 		if(i<tab.length)
 		{
 			for(j=0;j<tab.length-1;j++)
@@ -91,16 +91,19 @@
 				{
 					var f3=function(tab,j){
 						per(tab,j,j+1);
+					}
+					setTimeout(f3(tab,j), 500);
+					var f4=function(tab,j){
 						Dessin(tab[j])
 						Dessin(tab[j+1]);
 					}
-					setTimeout(f3(tab,j), 50);
+					setTimeout(f4(tab,j), 500)
 				}else{
 					setTimeout(
 						function(){
 
 						},
-						50
+						500
 					)						
 				}
 

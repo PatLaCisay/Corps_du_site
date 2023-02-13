@@ -8,12 +8,12 @@ var d=0;
 		this.dx = dx;
 		this.dy = 15;
 	}
-	for( i=0;i<tab.length;i++) // Crééation des éléments du tableaux
+	for( i=0;i<tab.length;i++) // Crï¿½ï¿½ation des ï¿½lï¿½ments du tableaux
 		{
 			tab[i]=new Barre(d+20,Math.round(100*Math.random()+1));
 			d=d+20;
 		}
-	function draw_Elements() // Fonction du dessin des élément du tableau sur le navigateur 
+	function draw_Elements() // Fonction du dessin des ï¿½lï¿½ment du tableau sur le navigateur 
 	{	
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext('2d');
@@ -137,4 +137,8 @@ var d=0;
 	function Lance_tri_selection()
 	{
 		Tri_Selection(tab);
+	}
+	function recharger()
+	{
+		location.reload();
 	}

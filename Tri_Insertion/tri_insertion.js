@@ -9,12 +9,12 @@ function Barre(y,dx) // Classe Barre
 	this.dx = dx;
 	this.dy = 15;
 }
-for( i=0;i<tab.length;i++) // Cr?tion des ?ments du tableaux
+for( i=0;i<tab.length;i++) // Cretion des ements du tableaux
 {
 	tab[i]=new Barre(d+20,Math.round(100*Math.random()+1));
 	d=d+20;
 }
-function draw_Elements() // Fonction du dessin des ?ment du tableau sur le navigateur 
+function draw_Elements() // Fonction du dessin des element du tableau sur le navigateur 
 {
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext('2d');
@@ -81,43 +81,48 @@ function continuer()
   rep=setInterval(cycle,9000);
 }
 function cycle()
+{
+	
+	if(i<tab.length)
 	{
-		
-		if(i<tab.length)
+		for(j=p;j>0;j=j-1)
 		{
-			for(j=p;j>0;j=j-1)
+			p=j-1;
+			if(tab[j-1].dx>tab[j].dx)
 			{
-				p=j-1;
-				if(tab[j-1].dx>tab[j].dx)
+				
+				Deplace_Horizontal(tab[j]);
+				Deplace_Horizontal(tab[j-1]);
+				
+											
+				var f3=function()
 				{
-					
-						Deplace_Horizontal(tab[j]);
-						Deplace_Horizontal(tab[j-1]);
-					
-											 
-					var f3=function()
-					{
-						per(tab,j-1,j);
-						Dessin(tab[j]);
-						Dessin(tab[j-1]);	
-					}
-					setTimeout(f3,4000);
-					break;
-				}				
-			}
-			if(j==0)
-			{
-			i=i+1;
-			p=i;}
-		}	
-	}
+					per(tab,j-1,j);
+					Dessin(tab[j]);
+					Dessin(tab[j-1]);	
+				}
+				setTimeout(f3,4000);
+				break;
+			}				
+		}
+		if(j==0)
+		{
+		i=i+1;
+		p=i;}
+	}	
+}
 function Tri_Insertion(tab)
 {
 	i=1;
 	p=i;
 	rep=setInterval(cycle,6500);
 }
-function Executer()
+function executer()
 {
 	Tri_Insertion(tab);
+}
+
+function recharger()
+{
+	location.reload();
 }
