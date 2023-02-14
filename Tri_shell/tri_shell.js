@@ -176,3 +176,7 @@ function Lance_tri_shell()
 {
 	Tri_Shell(tab);
 }
+
+function recharger(){
+	window.reload();
+}
