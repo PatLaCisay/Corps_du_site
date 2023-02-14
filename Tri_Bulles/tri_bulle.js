@@ -14,7 +14,7 @@
 		tab[i]=new Barre(d+20,Math.round(100*Math.random()+1));
 		d=d+20;
 	}
-	function draw_Elements() // Fonction du dessin des ?ment du tableau sur le navigateur 
+	function draw_elements() // Fonction du dessin des ?ment du tableau sur le navigateur 
 	{
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext('2d');
@@ -26,7 +26,7 @@
 			ctx.fillRect(20,tab[i].y,tab[i].dx,tab[i].dy);
 		}
 	}
-	function Deplace_Horizontal(Barre)
+	function deplace_horizontal(Barre)
 	{
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext("2d");
@@ -53,7 +53,7 @@
 		tab[i].dx=tab[j].dx;
 		tab[j].dx=a;
 	}
-	function Dessin(Barre)
+	function dessin(Barre)
 	{
 		var canvas = document.getElementById("canvas");
 		var ctx = canvas.getContext("2d");
@@ -87,16 +87,16 @@
 		{
 			if(j<tab.length)
 			{
-				Deplace_Horizontal(tab[j]);
-				Deplace_Horizontal(tab[j+1]);
+				deplace_horizontal(tab[j]);
+				deplace_horizontal(tab[j+1]);
 
 
 				if(tab[j].dx>tab[j+1].dx)
 				{
 					per(tab,j,j+1);
 				}
-				Dessin(tab[j])
-				Dessin(tab[j+1]);
+				dessin(tab[j])
+				dessin(tab[j+1]);
 			}
 			j++;
 			if(j==tab.length-1){
@@ -105,15 +105,15 @@
 			}
 		}	
 	}
-	function Tri_Bulle(tab)
+	function tri_bulle(tab)
 	{
 		i=0;
 		j=0;
 		rep=setInterval(cycle,650);
 	}
-	function Executer()
+	function executer()
 	{
-		Tri_Bulle(tab);
+		tri_bulle(tab);
 	}
 
 	function recharger()

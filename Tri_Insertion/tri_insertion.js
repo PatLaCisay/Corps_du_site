@@ -14,7 +14,7 @@ for( i=0;i<tab.length;i++) // Cretion des ements du tableaux
 	tab[i]=new Barre(d+20,Math.round(100*Math.random()+1));
 	d=d+20;
 }
-function draw_Elements() // Fonction du dessin des element du tableau sur le navigateur 
+function draw_elements() // Fonction du dessin des element du tableau sur le navigateur 
 {
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext('2d');
@@ -26,7 +26,7 @@ function draw_Elements() // Fonction du dessin des element du tableau sur le nav
 		ctx.fillRect(tab[i].x,tab[i].y,tab[i].dx,tab[i].dy);
 	}
 }
-function Deplace_Horizontal(Barre)
+function deplace_horizontal(Barre)
 {
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
@@ -52,7 +52,7 @@ function per(table,i,j)
 	table[i].dx=table[j].dx;
 	table[j].dx=a;
 }
-function Dessin(Barre)
+function dessin(Barre)
 {
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
@@ -91,15 +91,15 @@ function cycle()
 			if(tab[j-1].dx>tab[j].dx)
 			{
 				
-				Deplace_Horizontal(tab[j]);
-				Deplace_Horizontal(tab[j-1]);
+				deplace_horizontal(tab[j]);
+				deplace_horizontal(tab[j-1]);
 				
 											
 				var f3=function()
 				{
 					per(tab,j-1,j);
-					Dessin(tab[j]);
-					Dessin(tab[j-1]);	
+					dessin(tab[j]);
+					dessin(tab[j-1]);	
 				}
 				setTimeout(f3,4000);
 				break;
