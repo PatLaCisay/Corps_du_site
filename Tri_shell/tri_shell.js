@@ -14,7 +14,7 @@ for( i=0;i<tab.length;i++) // Création des éléments du tableaux
 		d=d+20;
 	}
 
-function draw_Elements() // Fonction du dessin des élément du tableau sur le navigateur 
+function draw_elements() // Fonction du dessin des élément du tableau sur le navigateur 
 {	
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext('2d');
@@ -27,7 +27,7 @@ function draw_Elements() // Fonction du dessin des élément du tableau sur le n
 	}
 }
 
-function Deplace_Horizontal(Barre)
+function deplace_horizontal(Barre)
 {
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
@@ -55,7 +55,7 @@ function per(table,i,j)
 	table[j].dx=a;
 }
 
-function Dessin(Barre)
+function dessin(Barre)
 {
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
@@ -101,13 +101,13 @@ function cycle_shell()
 
 				min = tab[i].dx;
 				j = i;
-				//Deplace_Horizontal(tab[j]);
+				//deplace_horizontal(tab[j]);
 				while (j > 0 && tab[j - gap].dx > min) 
 				{ 	
-					//Deplace_Horizontal(tab[j-gap]);
-					Dessin(tab[j-gap]);
+					//deplace_horizontal(tab[j-gap]);
+					dessin(tab[j-gap]);
 					tab[j].dx = tab[j - gap].dx;
-					Dessin(tab[j]);
+					dessin(tab[j]);
 					
 
 					j -= gap;
@@ -118,7 +118,7 @@ function cycle_shell()
 		
 				}
 				tab[j].dx = min;
-				Dessin(tab[j]);
+				dessin(tab[j]);
 			}
 		}
 		debut += 1;
@@ -131,7 +131,7 @@ function cycle_shell()
 
 }
 
-function Tri_Shell(tab)
+function tri_shell(tab)
 {
 	index=0; 
 	debut=0;
@@ -172,9 +172,9 @@ function continuer()
 	rep1= setInterval(cycle_shell,14000);
 }
 
-function Lance_tri_shell()
+function lance_tri_shell()
 {
-	Tri_Shell(tab);
+	tri_shell(tab);
 }
 
 function recharger(){

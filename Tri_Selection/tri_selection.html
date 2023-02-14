@@ -1,13 +1,13 @@
 <html>
 	<head>
 	
-		<title>Tri_Selection</title>
+		<title>tri_selection</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<link rel="stylesheet" type="text/css" title="design" href="..\ressources\styles.css">
 		<script language="javascript" src="tri_selection.js" >
 		</script>
 	</head>
-	<body onload="draw_Elements();" >
+	<body onload="draw_elements();" >
 		<div id="en_tete">
 			
 		</div>
@@ -34,7 +34,7 @@
 		</div>
 		<div id="corps">
 			<fieldset class="Presentation">
-				<legend>Tri_Selection : l'algorithme </legend>
+				<legend>tri_selection : l'algorithme </legend>
 				<div>
 					<h3> Principe </h3>
 					<p>
@@ -104,7 +104,7 @@
 					<H3> Code JavaScript </H3>	
 					<h4>
 <pre>
-function Tri_Selection(tableau)
+function tri_selection(tableau)
 {
   var i,j,min,indice_min;
   for (i = 0; i < tableau.length-1; i++)
@@ -166,7 +166,7 @@ permuter(tableau,i,j)
 			<fieldset class="Boite_Controle">
 				<legend> Boîte de Contrôle </legend>
 				<div>
-					<INPUT TYPE="Button" class="button" Value="Executer" onclick="Lance_tri_selection();">
+					<INPUT TYPE="Button" class="button" Value="executer" onclick="lance_tri_selection();">
 					<INPUT TYPE="Button" class="button" Value="Susppendre" onclick="stop();">
 					<INPUT TYPE="Button" class="button" Value="Continuer" onclick="continuer();">
 					<INPUT TYPE="Button" class="button" Value="Recharger" onclick="recharger();">
